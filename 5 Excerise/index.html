@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <!-- <div id = "app" v-bind:title="message"> -->
+    <div id="app" :title="message">
+        <input type="text" v-model="field">
+        <p>Current Value of the input string is {{exclamatedField}} </p>
+    </div>
+    <script>
+      var app = new Vue({
+        el: "#app",
+        data: {
+          field: "",
+        },
+        computed:{
+            exclamatedField: function(){
+                return this.field + "!";
+            }
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body >
+        <!-- <div id = "app" v-bind:title="message"> -->
+        <div id = "app" :title="message">
+            <h1>
+                {{exclamated}}
+                {{reversedMessage}}
+            </h1>
+            <p>
+                {{paragraphmessage}}
+            </p>
+            <a :href="anchorSrc" >{{anchorMessage}}</a>
+        </div>
+        <script>
+            var app = new Vue({
+                el : "#app",
+                data : {
+                    message : "Hello Vue!",
+                    headerMessage : "This is a header",
+                    paragraphmessage : "This is a paragraph",
+                    anchorSrc : "https://www.google.com",
+                    anchorMessage : "Go to Google"
+                },
+                computed : {
+                    exclamated : function(){
+                        return this.headerMessage + "!";
+                    },
+                    reversedMessage : function(){
+                        return this.exclamated.split("").reverse().join("");
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>

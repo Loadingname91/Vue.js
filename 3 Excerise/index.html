@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <!-- <div id = "app" v-bind:title="message"> -->
+        <div id = "app" :title="message">
+            <h1>
+                {{headerMessage}}
+            </h1>
+            <p>
+                {{paragraphmessage}}
+            </p>
+            <a :href="anchorSrc" >{{anchorMessage}}</a>
+        </div>
+        <script>
+            var app = new Vue({
+                el : "#app",
+                data : {
+                    "title": "learning Vue!",
+                    "headerMessage": "Learning Vue on Scrimba",
+                    "paragraphMessage": "This is an interactive lesson on how to remove the data from the DOM and put it on the Vue instance.",
+                    "anchorSrc": "https://vuejs.org/",
+                    "anchorMessage": "Visit Vue"
+                }
+            })
+        </script>
+    </body>
+</html>
